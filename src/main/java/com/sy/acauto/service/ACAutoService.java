@@ -3,6 +3,7 @@ package com.sy.acauto.service;
 import com.sy.acauto.component.WordSet;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -10,6 +11,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class ACAutoService {
+
+    private static final String WORDSET_DIR_PATH = "./word_set_dir";
 
     Map<String, WordSet> wordSetMap = new ConcurrentHashMap<>();
 
@@ -40,5 +43,14 @@ public class ACAutoService {
         return wordSet.mark(targetSentence);
     }
 
+    public void buildByWordSetDir() {
+        File fileDir = new File(WORDSET_DIR_PATH);
+        if (fileDir.isDirectory()) {
+            File[] files = fileDir.listFiles();
+            for (File file : files) {
+                //...
+            }
+        }
+    }
 
 }
