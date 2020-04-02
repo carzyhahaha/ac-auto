@@ -106,9 +106,9 @@ public class WordSet {
             if (!StringUtils.isEmpty(matchNode.getTerm())) {
                 String term = matchNode.getTerm();
                 rs.delete(rs.length() - term.length(), rs.length());
-                rs.append("[  ");
+                rs.append("  [");
                 rs.append(term);
-                rs.append("  ]");
+                rs.append("]  ");
             }
             char word = sentence.charAt(i);
             TrieNode SubMatchNode = matchNode.getSubNode(word);

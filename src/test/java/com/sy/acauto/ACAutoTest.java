@@ -16,9 +16,9 @@ public class ACAutoTest {
     public void test() {
 
         WordSet wordSet = new WordSet();
-        wordSet.addTerm("指针");
-        wordSet.addTerm("指向");
-        wordSet.addTerm("是不是");
+        wordSet.addTerm("匹配");
+        wordSet.addTerm("回溯");
+        wordSet.addTerm("fail");
         wordSet.addTerm("前缀");
         wordSet.addTerm("相同");
 
