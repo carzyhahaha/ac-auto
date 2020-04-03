@@ -16,24 +16,21 @@ public class ACAutoTest {
     public void test() {
 
         WordSet wordSet = new WordSet();
-        wordSet.addTerm("匹配");
-        wordSet.addTerm("回溯");
-        wordSet.addTerm("fail");
-        wordSet.addTerm("前缀");
-        wordSet.addTerm("相同");
-
+        wordSet.addTerm("我的后缀abcde");
+        wordSet.addTerm("后缀abcde是我的前缀");
+        wordSet.addTerm("理论上时间复杂度");
+        wordSet.addTerm("最坏情况判断 n(目标串长度) + m(失配次数, 因为只有适配时候才会重复处理当前字符)");
+        wordSet.addTerm("目标串长度");
+        wordSet.addTerm("最长模式串)");
+        wordSet.addTerm("时间复杂度为O(n)");
 
         wordSet.linkFail();
 //        wordSet.showYourSelf();
 
-        System.out.println(wordSet.query("ac自动机,就是在tire树的基础上,增加一个fail指针,如果当前点匹配失败,则将指针转" +
-                        "移到fail指针指向的地方,这样就不用回溯,而可以路匹配下去了.(当前模式串后缀和fail指针指向的模式串部分前缀相同," +
-                        "如abce和bcd,我们找到c发现下一个要找的不是e,就跳到bcd中的c处,看看此处的下一个字符(d)是不是应该找的那一个)"));
+        System.out.println(wordSet.query("我的后缀abcde是我的前缀,理论上时间复杂度是O(n+m)n为目标串长度, m为最长模式串所以时间复杂度为O(n)"));
 
 
-        System.out.println(wordSet.mark("ac自动机,就是在tire树的基础上,增加一个fail指针,如果当前点匹配失败,则将指针转" +
-                "移到fail指针指向的地方,这样就不用回溯,而可以路匹配下去了.(当前模式串后缀和fail指针指向的模式串部分前缀相同," +
-                "如abce和bcd,我们找到c发现下一个要找的不是e,就跳到bcd中的c处,看看此处的下一个字符(d)是不是应该找的那一个)"));
+
     }
 
     @Autowired

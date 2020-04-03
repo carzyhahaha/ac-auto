@@ -75,10 +75,9 @@ public class WordSet {
         List<String> rs = new ArrayList<>();
 
         TrieNode matchNode = root;
+        int cnt = 0;
         for (int i = 0; i < sentence.length(); ) {
-            if (!StringUtils.isEmpty(matchNode.getTerm())) {
-                rs.add(matchNode.getTerm());
-            }
+            cnt ++;
             char word = sentence.charAt(i);
             TrieNode SubMatchNode = matchNode.getSubNode(word);
             if (Objects.isNull(SubMatchNode)) {
@@ -91,7 +90,12 @@ public class WordSet {
                 matchNode = SubMatchNode;
                 i++;
             }
+            if (!StringUtils.isEmpty(matchNode.getTerm())) {
+                rs.add(matchNode.getTerm());
+            }
         }
+
+        rs.add("目标串长度" + sentence.length() + ",处理次数" + cnt);
         return rs;
     }
 
